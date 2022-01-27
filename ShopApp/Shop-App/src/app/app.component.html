@@ -1,27 +1,11 @@
-<div style="text-align:center">
+<app-navigation-bar></app-navigation-bar>
+<div class="">
+  <div style="text-align:center">
     <h1>
       Welcome!
     </h1>
     <button (click)="getData()">Fetch Data</button>
+  </div>
 </div>
 
-<div class="dropdown">
-  <button
-    class="btn btn-secondary dropdown-toggle"
-    type="button"
-    id="dropdownMenuButton1"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
-
-
-<app-shop></app-shop>
 <router-outlet></router-outlet>
