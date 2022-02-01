@@ -8,8 +8,6 @@ import Shop from 'src/app/models/shop.model';
   styleUrls: ['./shops-list.component.scss']
 })
 export class ShopsListComponent implements OnInit {
-  public text: string = 'Rabarbara';
-
   public shops: Shop[] = [];
 
   private shopService? :ShopsService;
@@ -26,6 +24,5 @@ export class ShopsListComponent implements OnInit {
 
   public dontClick(): void {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley";
-    console.log("labadienas");
   }
 }

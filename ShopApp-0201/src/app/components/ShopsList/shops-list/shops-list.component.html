@@ -4,7 +4,8 @@
         <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
+            <th scope="col">Shop name</th>
+            <th scope="col">Number of goods</th>
             <th scope="col">Date Created</th>
             <th scope="col">Actions</th>
         </tr>
@@ -13,6 +14,7 @@
             <tr *ngFor="let shop of shops">
                 <th scope="row">{{shop.id}}</th>
                 <td>{{shop.name}}</td>
+                <td>{{shop.products.length}}</td>
                 <td>{{shop.dateCreated}}</td>
                 <td>
                     <button type="button" class="btn btn-danger" (click)="dontClick()">Nespausk</button>
