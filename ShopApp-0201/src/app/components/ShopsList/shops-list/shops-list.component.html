@@ -18,8 +18,11 @@
                 <td>{{shop.dateCreated}}</td>
                 <td>
                     <button type="button" class="btn btn-danger" (click)="dontClick()">Nespausk</button>
+                    <a routerLink="/shop" routerLinkActive="active">Paspausk</a>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+
+<router-outlet></router-outlet>
