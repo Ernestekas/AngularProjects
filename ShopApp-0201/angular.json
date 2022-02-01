@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Shop-App": {
+    "ExampleApp-0201": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shop-app",
+            "outputPath": "dist/example-app-0201",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Shop-App:build:production"
+              "browserTarget": "ExampleApp-0201:build:production"
             },
             "development": {
-              "browserTarget": "Shop-App:build:development"
+              "browserTarget": "ExampleApp-0201:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Shop-App:build"
+            "browserTarget": "ExampleApp-0201:build"
           }
         },
         "test": {
@@ -111,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "Shop-App"
+  "defaultProject": "ExampleApp-0201"
 }

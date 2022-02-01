@@ -1,0 +1,23 @@
+<div class="px-2">
+    <h1>All Shops</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date Created</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let shop of shops">
+                <th scope="row">{{shop.id}}</th>
+                <td>{{shop.name}}</td>
+                <td>{{shop.dateCreated}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="dontClick()">Nespausk</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

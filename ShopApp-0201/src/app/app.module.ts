@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShopComponent } from './shop/shop/shop.component';
-import { NavigationBarComponent } from './Layout/Navbar/navigation-bar/navigation-bar.component';
+import { ShopsListComponent } from './components/ShopsList/shops-list/shops-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShopComponent,
-    NavigationBarComponent
+    ShopsListComponent,
   ],
   imports: [
     BrowserModule,
