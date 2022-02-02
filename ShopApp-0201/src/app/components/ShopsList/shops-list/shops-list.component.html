@@ -14,11 +14,12 @@
             <tr *ngFor="let shop of shops">
                 <th scope="row">{{shop.id}}</th>
                 <td>{{shop.name}}</td>
-                <td>{{shop.products.length}}</td>
+                <td>{{shop.products!.length}}</td>
                 <td>{{shop.dateCreated}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger" (click)="dontClick()">Nespausk</button>
-                    <a routerLink="/shop" routerLinkActive="active">Paspausk</a>
+                    <button class="btn btn-outline-dark" [routerLink]="['/shop', shop.id]">Select</button>
+                    <button class="btn btn-outline-dark mx-1">Update</button>
+                    <button class="btn btn-outline-danger" [routerLink]="[]">Delete</button>
                 </td>
             </tr>
         </tbody>
