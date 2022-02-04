@@ -17,8 +17,11 @@ export class ShopsListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    // this.shopService?.getAllShops().subscribe((shops) => {
+    //   this.shops = shops;
+    // });
     this.shopService?.getAllShops().subscribe((shops) => {
-      this.shops = shops;
+      Array.prototype.push.apply(this.shops, shops)
     });
   }
 

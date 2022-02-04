@@ -25,6 +25,6 @@ export class ShopsService {
     const headers = {'content-type': 'application/json'};
     const body = JSON.stringify(shop);
     
-    return this.http.post(this.url + "/shops", body, {'headers': headers})
+    return this.http.post(this.url + "/shops", body, {'headers': headers});
   }
 }

@@ -24,7 +24,6 @@ export class AddShopComponent implements OnInit {
   submitShop(name:string){
     this.shop.name = name;
     this.shopService?.addNewShop(this.shop).subscribe();
-    this.shopService?.getAllShops();
-    this.router.navigate(['']);
+    this.router.navigate(['/shops']);
   }
 }
