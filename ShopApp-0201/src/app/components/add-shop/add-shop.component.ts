@@ -13,15 +13,15 @@ export class AddShopComponent implements OnInit {
   public name: string = "Labulas";
   public shop: Shop = {};
 
-  constructor(private shopService : ShopsService, private router: Router) {}
+  constructor(private _shopService : ShopsService, private _router: Router) {}
 
   ngOnInit(): void {
   }
 
   submitShop(name:string){
     this.shop.name = name;
-    this.shopService.addNewShop(this.shop).subscribe(() => {
-      this.router.navigate(['/shops']);
+    this._shopService.addNewShop(this.shop).subscribe(() => {
+      this._router.navigate(['/shops']);
     });
   }
 }

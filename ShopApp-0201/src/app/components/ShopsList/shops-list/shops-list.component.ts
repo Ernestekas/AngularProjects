@@ -11,20 +11,16 @@ import { Observable } from 'rxjs';
 export class ShopsListComponent implements OnInit {
   public shops: Shop[] = [];
 
-  private shopService? :ShopsService;
-
-  constructor(shopService: ShopsService) {
-    this.shopService = shopService;
-   }
+  constructor(private _shopService: ShopsService) {}
 
   ngOnInit(): void {
-    this.shopService?.getAllShops().subscribe((shops) => {
+    this._shopService.getAllShops().subscribe((shops) => {
       this.shops = shops;
     });
   }
 
-  delete(id : number) {
-    this.shopService?.remove(id).subscribe();
+  public delete(id : number) : void {
+    this._shopService.remove(id).subscribe();
     this.shops = this.shops.filter(shop => shop.id != id);
   }
 
