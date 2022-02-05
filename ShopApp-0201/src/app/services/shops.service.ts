@@ -28,4 +28,13 @@ export class ShopsService {
   public remove(id : number) : Observable<any> {
     return this.http.delete(this.url + id);
   }
+
+  public update(shop : Shop) : Observable<any> {
+    let returnString = '"' + shop.name + '"';
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type' : 'application/json'})
+    }
+    
+    return this.http.put(this.url + shop.id, returnString, httpOptions);
+  }
 }

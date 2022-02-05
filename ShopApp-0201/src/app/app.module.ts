@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContentComponent } from './components/content/content.component';
 import { AddShopComponent } from './components/add-shop/add-shop.component';
 import { FormsModule } from '@angular/forms';
+import { ShopComponent } from './components/Shop/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     ShopsListComponent,
     NavbarComponent,
     ContentComponent,
-    AddShopComponent
+    AddShopComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
