@@ -34,7 +34,7 @@ export class ShopsService {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type' : 'application/json'})
     }
-    
+
     return this.http.put(this.url + shop.id, returnString, httpOptions);
   }
 }
