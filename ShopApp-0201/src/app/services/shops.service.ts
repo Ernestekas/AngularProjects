@@ -9,22 +9,23 @@ import { HttpHeaders } from '@angular/common/http';
 })
 
 export class ShopsService {
-  private url: string = "https://localhost:44300/api";
+  private url: string = "https://localhost:44300/api/shops/";
   
   constructor(private http: HttpClient) { }
 
   public getAllShops(): Observable<Shop[]> {
-    return this.http.get<Shop[]>(this.url + "/shops");
+    return this.http.get<Shop[]>(this.url);
   }
 
   public getShop(id: number): Observable<Shop>{
-    return this.http.get<Shop>(this.url + "/shops/" + id);
+    return this.http.get<Shop>(this.url + id);
   }
 
-  public addNewShop(shop: Shop): Observable<Shop> {
-    const headers = {'content-type': 'application/json'};
-    const body = JSON.stringify(shop);
-    
-    return this.http.post(this.url + "/shops", body, {'headers': headers});
+  public addNewShop(shop: Shop): Observable<any> {
+    return this.http.post(this.url, shop);
+  }
+
+  public remove(id : number) : Observable<any> {
+    return this.http.delete(this.url + id);
   }
 }

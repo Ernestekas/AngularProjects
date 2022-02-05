@@ -7,10 +7,10 @@ import { ShopComponent } from './components/Shop/shop/shop.component';
 import { ShopsListComponent } from './components/ShopsList/shops-list/shops-list.component';
 
 const routes: Routes = [
-  {path: '', component: ShopsListComponent},
   {path: 'shops', component: ShopsListComponent},
   {path: 'shop', component: ShopComponent},
-  {path: 'shop/add', component: AddShopComponent}
+  {path: 'shop/add', component: AddShopComponent},
+  {path: '', redirectTo: '/shops', pathMatch : 'full'}
 ];
 
 @NgModule({

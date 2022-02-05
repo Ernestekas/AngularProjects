@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <h1>All Shops</h1>
     <table class="table">
         <thead>
@@ -19,7 +19,7 @@
                 <td>
                     <button class="btn btn-outline-dark" [routerLink]="['/shop', shop.id]">Select</button>
                     <button class="btn btn-outline-dark mx-1">Update</button>
-                    <button class="btn btn-outline-danger" [routerLink]="[]">Delete</button>
+                    <button class="btn btn-outline-danger" (click)="delete(shop.id!)">Delete</button>
                 </td>
             </tr>
         </tbody>
