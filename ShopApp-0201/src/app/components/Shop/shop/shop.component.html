@@ -12,7 +12,7 @@
   <h4><i>Goods in store:</i></h4>
   <table class="table">
     <thead>
-      <tr>
+      <tr class="align-self-center">
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Price</th>
@@ -25,7 +25,17 @@
         <td>{{product.name}}</td>
         <td>{{product.price | currency:"EUR":"symbol"}}</td>
         <td>
-
+          <button class="btn btn-outline-dark">Update</button>
+          <button class="btn btn-outline-danger mx-1">Remove</button>
+        </td>
+      </tr>
+      <tr class="bg-light">
+        <th scope="row">#</th>
+        <td><input type="text" class="form-control" placeholder="Enter new product name"></td>
+        <td><input type="number" class="form-control" placeholder="Enter product price" step=".01" value="0.00"></td>
+        <td>
+          <button class="btn btn-outline-success">Add</button>
+          <button class="btn btn-outline-danger mx-1">Cancel</button>
         </td>
       </tr>
     </tbody>

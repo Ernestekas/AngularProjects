@@ -9,7 +9,7 @@ import { ShopsListComponent } from './components/ShopsList/shops-list/shops-list
 const routes: Routes = [
   {path: 'shops', component: ShopsListComponent},
   {path: 'shop/:id', component: ShopComponent},
-  {path: 'shop/add', component: AddShopComponent},
+  {path: 'shops/add', component: AddShopComponent},
   {path: '', redirectTo: '/shops', pathMatch : 'full'}
 ];
 

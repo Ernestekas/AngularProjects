@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopsService } from 'src/app/services/shops.service';
 import Shop from 'src/app/models/shop.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shops-list',
@@ -18,7 +19,7 @@ export class ShopsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.shopService?.getAllShops().subscribe((shops) => {
-      Array.prototype.push.apply(this.shops, shops)
+      this.shops = shops;
     });
   }
 
