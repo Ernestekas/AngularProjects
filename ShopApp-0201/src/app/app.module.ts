@@ -10,6 +10,7 @@ import { ContentComponent } from './components/content/content.component';
 import { AddShopComponent } from './components/add-shop/add-shop.component';
 import { FormsModule } from '@angular/forms';
 import { ShopComponent } from './components/Shop/shop/shop.component';
+import { ProductsListComponent } from './components/products-components/products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ShopComponent } from './components/Shop/shop/shop.component';
     NavbarComponent,
     ContentComponent,
     AddShopComponent,
-    ShopComponent
+    ShopComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,

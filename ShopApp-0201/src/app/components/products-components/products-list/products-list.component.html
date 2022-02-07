@@ -1,0 +1,41 @@
+<h2><i>All goods in our chain</i></h2>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Shop</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-light">
+        <th scope="row">#</th>
+        <td><input type="text" class="form-control" placeholder="Enter new product name"></td>
+        <td>
+            <select class="form-select" name="my-select" [(ngModel)]="selectedShop">
+                <option *ngFor="let shop of shops" [ngValue]="shop">
+                    {{shop.name}}
+                </option>
+            </select>
+        </td>
+        <td id="price"><input type="number" class="form-control" placeholder="Enter product price" step=".01" value="0.00"></td>
+        <td>
+            <button class="btn btn-outline-success">Add</button>
+            <button class="btn btn-outline-danger mx-1">Cancel</button>
+        </td>
+      </tr>
+      <tr *ngFor="let prod of products; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{prod.name}}</td>
+        <td>{{prod.shopName}}</td>
+        <td>{{prod.price | currency:"EUR":"symbol"}}</td>
+        <td>
+            <button class="btn btn-outline-dark">Update</button>
+            <button class="btn btn-outline-danger mx-1">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
