@@ -1,7 +1,7 @@
 export default interface Product{
-    id: number,
+    id?: number,
     name: string,
     shopId: number,
-    shopName: string,
+    shopName?: string,
     price: number
 }

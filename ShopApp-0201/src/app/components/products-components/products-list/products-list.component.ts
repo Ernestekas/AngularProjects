@@ -15,7 +15,8 @@ export class ProductsListComponent implements OnInit {
   public shops : Shop[] = [];
 
   public selectedShop : Shop = {};
-  public selectedShopId : number = 0;
+  public newProductName : string = "";
+  public newProductPrice : number = 0;
 
   constructor(
     private _productsServics : ProductsService, 
@@ -39,8 +40,22 @@ export class ProductsListComponent implements OnInit {
     });
   }
 
-  public selectChange() : void {
-    this.selectedShopId = this.selectedShop.id!;
-    console.log(this.selectedShop.name)
+  public clearInputs() : void {
+    this.newProductName = "";
+    this.newProductPrice = 0;
+    this.selectedShop = {};
+  }
+
+  public submitNewProduct() : void {
+    let newProduct : Product = {
+      name: this.newProductName,
+      price: this.newProductPrice,
+      shopId: this.selectedShop.id!
+    };
+    
+    this._productsServics.addNew(newProduct).subscribe((product) => {
+      this.products.push(product);
+      this.clearInputs();
+    });
   }
 }
