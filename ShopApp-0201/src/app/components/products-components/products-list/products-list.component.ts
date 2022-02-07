@@ -11,12 +11,20 @@ import { ShopsService } from 'src/app/services/shops.service';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
+  displayStyle = "none";
+
   public products : Product[] = [];
   public shops : Shop[] = [];
 
   public selectedShop : Shop = {};
   public newProductName : string = "";
   public newProductPrice : number = 0;
+
+  public selectedProduct : Product = {
+    name: "n/a",
+    shopId: 0,
+    price: 0
+  };
 
   constructor(
     private _productsServics : ProductsService, 
@@ -62,5 +70,17 @@ export class ProductsListComponent implements OnInit {
   public delete(id : number) : void {
     this._productsServics.delete(id).subscribe();
     this.products = this.products.filter(product => product.id != id);
+  }
+
+  openPopup(product : Product) {
+    this.selectedProduct = product;
+    this.selectedShop = this.shops.filter(shop => shop.id === product.shopId)[0]
+    console.log(this.selectedShop, product);
+
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+    this.clearInputs();
   }
 }
