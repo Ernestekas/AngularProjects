@@ -27,7 +27,7 @@ export class ShopComponent implements OnInit {
     });
   }
 
-  public allowChangeName() {
+  public toggleChangeName() {
     let textBox = document.getElementById("name");
     let submitButton = document.getElementById("submitNameChange");
     let disabledAttributeExists = submitButton?.getAttribute("disabled");
@@ -37,6 +37,7 @@ export class ShopComponent implements OnInit {
       textBox?.removeAttribute("disabled");
     }
     else{
+      this.name = this.shop.name!;
       submitButton?.setAttribute("disabled", "disabled");
       textBox?.setAttribute("disabled", "disabled");
     }
@@ -45,5 +46,6 @@ export class ShopComponent implements OnInit {
   public submitNameChange() {
     this.shop.name = this.name;
     this._shopService.update(this.shop).subscribe();
+    this.toggleChangeName();
   }
 }
