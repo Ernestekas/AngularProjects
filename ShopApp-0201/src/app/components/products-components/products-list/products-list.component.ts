@@ -58,4 +58,9 @@ export class ProductsListComponent implements OnInit {
       this.clearInputs();
     });
   }
+
+  public delete(id : number) : void {
+    this._productsServics.delete(id).subscribe();
+    this.products = this.products.filter(product => product.id != id);
+  }
 }

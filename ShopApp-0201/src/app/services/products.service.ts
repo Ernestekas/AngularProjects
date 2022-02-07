@@ -18,4 +18,8 @@ export class ProductsService {
   public addNew(product : Product) : Observable<any> {
     return this.http.post(this.url, product);
   }
+
+  public delete(id : number) : Observable<any> {
+    return this.http.delete(this.url + id);
+  }
 }

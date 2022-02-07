@@ -22,7 +22,7 @@
             </select>
         </td>
         <td id="price">
-            <input type="number" class="form-control" placeholder="Enter product price" step=".01" value="0.00" id="newProductPrice" name="newProductPrice" [(ngModel)]="newProductPrice">
+            <input type="number" class="form-control" placeholder="Enter product price" step=".10" min="0" value="0.00" id="newProductPrice" name="newProductPrice" [(ngModel)]="newProductPrice">
         </td>
         <td>
             <button class="btn btn-outline-success" (click)="submitNewProduct()">Add</button>
@@ -36,7 +36,7 @@
         <td>{{prod.price | currency:"EUR":"symbol"}}</td>
         <td>
             <button class="btn btn-outline-dark">Update</button>
-            <button class="btn btn-outline-danger mx-1">Remove</button>
+            <button class="btn btn-outline-danger mx-1" (click)="delete(prod.id!)">Remove</button>
         </td>
       </tr>
     </tbody>
