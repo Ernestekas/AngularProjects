@@ -46,18 +46,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">{{selectedProduct.name}}</h4>
+        <h4 class="modal-title">{{oldProductName}}</h4>
       </div>
       <div class="modal-body">
 
         <form>
             <div class="mb-3">
               <label class="form-label">Product Name</label>
-              <input type="text" class="form-control" id="updateProductName" placeholder="Enter product name" value="{{selectedProduct.name}}">
+              <input type="text" class="form-control" placeholder="Enter product name" id="updateProductName" name="updateProductName" [(ngModel)]="selectedProduct.name">
             </div>
             <div class="mb-3">
               <label class="form-label">Shop</label>
-              <select class="form-select" name="my-select" [(ngModel)]="selectedShop" [value]="selectedShop">
+              <select class="form-select" name="my-select" [(ngModel)]="selectedShop">
                 <option *ngFor="let shop of shops" [ngValue]="shop">
                     {{shop.name}}
                 </option>
@@ -65,10 +65,10 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Product Price</label>
-                <input type="number" class="form-control" placeholder="Enter product price" step=".10" min="0" value="{{selectedProduct.price}}" id="newProductPrice" name="newProductPrice" [(ngModel)]="newProductPrice">
+                <input type="number" class="form-control" placeholder="Enter product price" step=".10" min="0" value="{{selectedProduct.price}}" id="newProductPrice" name="newProductPrice" [(ngModel)]="selectedProduct.price">
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" (click)="submitUpdate()">Submit</button>
                 <button type="button" class="btn btn-danger" (click)="closePopup()">Cancel</button>
               </div>
           </form>

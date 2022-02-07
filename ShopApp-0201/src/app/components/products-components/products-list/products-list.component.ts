@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Product from 'src/app/models/product.model';
 import Shop from 'src/app/models/shop.model';
 import { ProductsService } from 'src/app/services/products.service';
@@ -20,6 +21,7 @@ export class ProductsListComponent implements OnInit {
   public newProductName : string = "";
   public newProductPrice : number = 0;
 
+  public oldProductName : string = "";
   public selectedProduct : Product = {
     name: "n/a",
     shopId: 0,
@@ -67,6 +69,13 @@ export class ProductsListComponent implements OnInit {
     });
   }
 
+  public submitUpdate() : void {
+    this.selectedProduct.shopId = this.selectedShop.id!;
+    this._productsServics.update(this.selectedProduct).subscribe();
+    this.closePopup();
+    window.location.reload();
+  }
+
   public delete(id : number) : void {
     this._productsServics.delete(id).subscribe();
     this.products = this.products.filter(product => product.id != id);
@@ -74,11 +83,11 @@ export class ProductsListComponent implements OnInit {
 
   openPopup(product : Product) {
     this.selectedProduct = product;
-    this.selectedShop = this.shops.filter(shop => shop.id === product.shopId)[0]
-    console.log(this.selectedShop, product);
-
+    this.oldProductName = this.selectedProduct.name;
+    this.selectedShop = this.shops.filter(shop => shop.id === product.shopId)[0];
     this.displayStyle = "block";
   }
+
   closePopup() {
     this.displayStyle = "none";
     this.clearInputs();

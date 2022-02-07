@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Product from '../models/product.model';
@@ -21,5 +21,13 @@ export class ProductsService {
 
   public delete(id : number) : Observable<any> {
     return this.http.delete(this.url + id);
+  }
+
+  public update(product : Product) : Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-type' : 'application/json'})
+    };
+
+    return this.http.put(this.url + product.id, product, httpOptions);
   }
 }
