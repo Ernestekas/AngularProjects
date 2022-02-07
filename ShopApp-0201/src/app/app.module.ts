@@ -11,6 +11,7 @@ import { AddShopComponent } from './components/add-shop/add-shop.component';
 import { FormsModule } from '@angular/forms';
 import { ShopComponent } from './components/Shop/shop/shop.component';
 import { ProductsListComponent } from './components/products-components/products-list/products-list.component';
+import { StaticModalComponent } from './modals/static-modal/static-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductsListComponent } from './components/products-components/products
     ContentComponent,
     AddShopComponent,
     ShopComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    StaticModalComponent
   ],
   imports: [
     BrowserModule,
