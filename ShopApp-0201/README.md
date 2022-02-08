@@ -5,7 +5,7 @@ Functionality:
     - Create new shop.
         - User inputs: Shop name.
     - Update shop.
-        - User inputs: Change shop name, manage products from shop page (in progress),
+        - User inputs: Change shop name, manage (CRUD) products from shop page,
     - Remove selected shop.
         - User inputs: Press button to remove shop.
     - View all shops or select one shop to see shop details with goods.
@@ -19,7 +19,7 @@ Functionality:
         - User inputs: Press button to remove product.
     - View products.
         - View all products.
-        - View all products in selected shop.
+        - View all products in selected shop page.
 
 You can get web API for this app here: https://github.com/Ernestekas/ShopApp_WebAPI_P0121
 
