@@ -1,30 +1,34 @@
-<h1>All Shops</h1>
+<div class="my-1 container w-75">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="bg-dark text-white text-center" colspan="5"><i>All Shops</i></th>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Shop name</th>
+                <th style="text-align: center;" scope="col">Goods #</th>
+                <th scope="col">Date Created</th>
+                <th style="text-align: center;" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let shop of shops; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{shop.name}}</td>
+                <td style="text-align: center;">{{shop.products!.length}}</td>
+                <td>{{shop.dateCreated}}</td>
+                <td style="text-align: center;">
+                    <button class="btn btn-outline-dark mx-1" [routerLink]="['/shop', shop.id]">Select</button>
+                    <button class="btn btn-outline-danger" (click)="delete(shop.id!)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Shop name</th>
-        <th scope="col">Number of goods</th>
-        <th scope="col">Date Created</th>
-        <th scope="col">Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let shop of shops; let i = index">
-            <th scope="row">{{i + 1}}</th>
-            <td>{{shop.name}}</td>
-            <td>{{shop.products!.length}}</td>
-            <td>{{shop.dateCreated}}</td>
-            <td>
-                <button class="btn btn-outline-dark mx-1" [routerLink]="['/shop', shop.id]">Update</button>
-                <button class="btn btn-outline-danger" (click)="delete(shop.id!)">Delete</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
 
-<div style="border:3px solid red; padding: 5px;">
+<div hidden style="border:3px solid red; padding: 5px;">
     <h2 style="color: orange">Unresolved problems:</h2>
     <p>1. <b>Update</b> shop. Update is successful but dev tools detect error (something wrong with parsing returned status json).</p>
     <p>2. <b>Modal.</b> Modal fade requires to be put between head tag and body tag. It requires me to create separate component. In modal component is method 

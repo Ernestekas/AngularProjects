@@ -1,45 +1,49 @@
-<div class="p-1">
-  <div class="mb-3 row">
-    <div class="col-3 align-self-center" id="shopDataContainer">
-      <input id="name" type="text" disabled="disabled" class="form-control" value="{{shop.name}}" placeholder="Enter shop name" [(ngModel)]="name" name="name">
-    </div>
-    <div class="col">
-      <button id="allowNameChange" class="btn btn-outline-dark m-1" (click)="toggleChangeName()">Change name</button>
-      <button id="submitNameChange" class="btn btn-outline-success" disabled="disabled" (click)="submitNameChange()">Submit Changes</button>
-    </div>
+  <div class="container my-1 w-75">
+    <div class="p-1">
+      <div class="mb-3 row">
+        <div class="col-3 align-self-center" id="shopDataContainer">
+          <input id="name" type="text" disabled="disabled" class="form-control" value="{{shop.name}}" placeholder="Enter shop name" [(ngModel)]="name" name="name">
+        </div>
+        <div class="col">
+          <button id="allowNameChange" class="btn btn-outline-dark m-1" (click)="toggleChangeName()">Change name</button>
+          <button id="submitNameChange" class="btn btn-outline-success" disabled="disabled" (click)="submitNameChange()">Submit Changes</button>
+        </div>
+      </div>
+      
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="bg-dark text-white text-center" colspan="5"><i>Goods in shop</i></th>
+        </tr>
+        <tr class="align-self-center">
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-light">
+          <th scope="row">#</th>
+          <td><input type="text" class="form-control" placeholder="Enter new product name"></td>
+          <td><input type="number" class="form-control" placeholder="Enter product price" step=".01" value="0.00"></td>
+          <td>
+            <button class="btn btn-outline-success">Add</button>
+            <button class="btn btn-outline-danger mx-1">Cancel</button>
+          </td>
+        </tr>
+        <tr *ngFor="let product of shop.products; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency:"EUR":"symbol"}}</td>
+          <td>
+            <button class="btn btn-outline-dark">Update</button>
+            <button class="btn btn-outline-danger mx-1">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <h4><i>Goods in store:</i></h4>
-  <table class="table">
-    <thead>
-      <tr class="align-self-center">
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="bg-light">
-        <th scope="row">#</th>
-        <td><input type="text" class="form-control" placeholder="Enter new product name"></td>
-        <td><input type="number" class="form-control" placeholder="Enter product price" step=".01" value="0.00"></td>
-        <td>
-          <button class="btn btn-outline-success">Add</button>
-          <button class="btn btn-outline-danger mx-1">Cancel</button>
-        </td>
-      </tr>
-      <tr *ngFor="let product of shop.products; let i = index">
-        <th scope="row">{{i + 1}}</th>
-        <td>{{product.name}}</td>
-        <td>{{product.price | currency:"EUR":"symbol"}}</td>
-        <td>
-          <button class="btn btn-outline-dark">Update</button>
-          <button class="btn btn-outline-danger mx-1">Remove</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 

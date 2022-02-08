@@ -1,14 +1,16 @@
-<h2><i>All goods in our chain</i></h2>
-
-<table class="table">
+<div class="container w-75 my-1">
+  <table class="table">
     <thead>
-        <tr>
+      <tr>
+        <th class="bg-dark text-white text-center" colspan="5"><i>All Goods</i></th>
+      </tr>
+      <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Shop</th>
         <th scope="col">Price</th>
-        <th scope="col">Actions</th>
-        </tr>
+        <th class="text-center" scope="col">Actions</th>
+      </tr>
     </thead>
     <tbody>
         <tr class="bg-light">
@@ -40,7 +42,8 @@
         </td>
         </tr>
     </tbody>
-</table>
+  </table>
+</div>
 
 <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
   <div class="modal-dialog" role="document">
@@ -68,8 +71,8 @@
                 <input type="number" class="form-control" placeholder="Enter product price" step=".10" min="0" value="{{selectedProduct.price}}" id="newProductPrice" name="newProductPrice" [(ngModel)]="selectedProduct.price">
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" (click)="submitUpdate()">Submit</button>
-                <button type="button" class="btn btn-danger" (click)="closePopup()">Cancel</button>
+                <button type="submit" class="btn btn-outline-primary" (click)="submitUpdate()">Update</button>
+                <button type="button" class="btn btn-outline-danger" (click)="closePopup()">Cancel</button>
               </div>
           </form>
       </div>

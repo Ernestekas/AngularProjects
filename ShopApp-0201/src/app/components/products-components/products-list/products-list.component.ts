@@ -71,9 +71,10 @@ export class ProductsListComponent implements OnInit {
 
   public submitUpdate() : void {
     this.selectedProduct.shopId = this.selectedShop.id!;
-    this._productsServics.update(this.selectedProduct).subscribe();
     this.closePopup();
-    window.location.reload();
+    this._productsServics.update(this.selectedProduct).subscribe(() => {
+      window.location.reload();
+    });
   }
 
   public delete(id : number) : void {
